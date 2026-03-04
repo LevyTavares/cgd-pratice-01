@@ -1,1 +1,132 @@
-<h1>Ola Mundo - Pipeline DevOps</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline of the Void</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital@1&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #020204; /* Preto quase absoluto */
+            background-image: linear-gradient(to bottom, #0f172a, #020204); /* Degradê Void */
+            color: #e0e0e0;
+            font-family: 'Cinzel', serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Efeito de vinheta (bordas escuras) */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle, transparent 40%, #000000 100%);
+            pointer-events: none;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            max-width: 600px;
+            position: relative;
+        }
+
+        /* Detalhe ornamental nas bordas (estilo interface do jogo) */
+        .container::before, .container::after {
+            content: "✦";
+            position: absolute;
+            color: #a4b9d6;
+            font-size: 1.5rem;
+        }
+        .container::before { top: 10px; left: 10px; }
+        .container::after { bottom: 10px; right: 10px; }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(180, 210, 255, 0.6); /* Brilho da Alma */
+        }
+
+        p {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 10px 25px;
+            border: 1px solid #a4b9d6;
+            color: #a4b9d6;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-weight: 700;
+            letter-spacing: 2px;
+            position: relative;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .status-badge:hover {
+            background-color: #a4b9d6;
+            color: #020204;
+            box-shadow: 0 0 20px rgba(164, 185, 214, 0.4);
+            cursor: pointer;
+        }
+
+        /* Partículas flutuantes (simulando a poeira do jogo) */
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 10s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) translateX(20px); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="particle" style="left: 10%; animation-duration: 8s;"></div>
+    <div class="particle" style="left: 30%; animation-duration: 12s;"></div>
+    <div class="particle" style="left: 70%; animation-duration: 7s;"></div>
+    <div class="particle" style="left: 90%; animation-duration: 15s;"></div>
+
+    <div class="container">
+        <h1>Vessel v1.0</h1>
+        <p>"No cost too great. No mind to think. No will to break."</p>
+        
+        <div class="status-badge">
+            PIPELINE CONNECTED
+        </div>
+    </div>
+
+</body>
+</html>
